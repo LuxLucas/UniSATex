@@ -1,6 +1,5 @@
-Aqui está o texto formatado em Markdown de forma limpa e otimizada para leitura rápida:
 ## 1. Estrutura Semântica
-Use o seguinte formato para as suas mensagens:
+É recomendado usar seguinte formato para as suas mensagens:
 <tipo>[escopo]: <descrição>
 
 * :books: docs: Alterações gerais no texto, parágrafos e conteúdo.
