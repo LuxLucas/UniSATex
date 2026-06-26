@@ -1,11 +1,84 @@
 \section{Resultados e Discussão}
 Esta seção apresenta os resultados obtidos e a análise crítica dos achados. Podem ser incluídos gráficos, tabelas, quadros, equações e comparações com trabalhos relacionados. Caso a instituição prefira, esta seção pode ser dividida em duas: Resultados e Discussão.
 
-\subsection{Exemplo de Equação}
-As equações podem ser numeradas normalmente:
+\subsection{Apresentação dos Resultados}
+Descreva os principais resultados obtidos no desenvolvimento do trabalho, destacando dados, evidências, medições, protótipos, experimentos ou demais entregáveis relacionados aos objetivos da pesquisa.
+
+\subsection{Discussão dos Achados}
+Analise criticamente os resultados, comparando-os com a fundamentação teórica e com trabalhos relacionados. Indique interpretações, limitações, implicações práticas e possíveis causas para os resultados encontrados.
+
+Esta seção apresenta orientações práticas inspiradas no modelo \texttt{conference\_101719.tex}, adaptadas para o contexto de um Trabalho de Conclusão de Curso. O objetivo é explicar os principais recursos do \LaTeX{} usados neste template e indicar como manter a padronização visual do documento.
+
+\subsection{Estrutura do Documento}
+O arquivo principal, \texttt{main.tex}, organiza o trabalho por meio de comandos \verb|\input|. Essa estratégia permite separar o conteúdo em elementos pré-textuais, textuais e pós-textuais, facilitando a manutenção do projeto. Assim, cada seção pode ser editada em um arquivo próprio sem alterar a estrutura geral do documento.
+
+A classe \texttt{unisatex} é responsável por carregar a base tipográfica e estrutural derivada do \texttt{IEEEtran}. Ela também disponibiliza comandos próprios do modelo institucional, como \verb|\unisatexsubtitle|, \verb|\unisatexauthorblockN| e \verb|\unisatexauthorblockA|.
+
+\subsection{Título, Subtítulo e Autores}
+O título do trabalho é definido com \verb|\title|. Quando houver subtítulo, recomenda-se usar \verb|\unisatexsubtitle| para manter a apresentação padronizada:
+
+\begin{verbatim}
+\title{Título do TCC\\
+  \unisatexsubtitle{Subtítulo}}
+\end{verbatim}
+
+Os autores devem ser definidos dentro de \verb|\author|. Para manter a compatibilidade com o formato de conferência, cada autor utiliza um bloco de nome e um bloco de afiliação. O comando \verb|\thanks| pode ser empregado para notas de rodapé, como a indicação do curso do aluno ou a função do orientador.
+
+\subsection{Resumo, Abstract e Palavras-chave}
+O resumo em português utiliza o ambiente \verb|abstract|, enquanto as palavras-chave utilizam o ambiente \verb|keywords|. Para a versão em inglês, recomenda-se envolver o conteúdo em \verb|otherlanguage| e usar o ambiente \verb|englishkeywords| para que o rótulo seja apresentado como \textit{Keywords}.
+
+Esses elementos devem ser objetivos e não numerados, pois pertencem aos elementos pré-textuais do TCC. O resumo deve apresentar problema, objetivo, metodologia, resultados e conclusão de forma sintética.
+
+\subsection{Seções e Subseções}
+As divisões textuais são criadas com \verb|\section| e \verb|\subsection|. O \LaTeX{} numera automaticamente as seções, mantendo a consistência do documento. Evite numeração manual nos títulos, pois isso prejudica referências cruzadas e futuras reorganizações do texto.
+
+\subsection{Citações e Referências com BibTeX}
+As citações devem ser feitas com \verb|\cite|, como em \verb|\cite{ieeetran}|. As referências bibliográficas ficam no arquivo \texttt{references.bib}, e a lista final é gerada automaticamente por BibTeX a partir dos comandos:
+
+\begin{verbatim}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{verbatim}
+
+Essa abordagem reduz erros de formatação e garante que apenas obras citadas no texto apareçam na lista de referências.
+
+\subsection{Equações}
+Equações devem ser inseridas com o ambiente \verb|equation| quando precisarem de numeração. Para citar uma equação no texto, recomenda-se usar \verb|\label| e \verb|\eqref|, evitando referências manuais que podem ficar incorretas caso a ordem do documento seja alterada.
+
 \begin{equation}
-E = mc^2.
+a + b = \gamma\label{eq:exemplo-latex}
 \end{equation}
 
+A Equação~\eqref{eq:exemplo-latex} ilustra uma equação numerada automaticamente.
+
 \subsection{Figuras e Tabelas}
-Insira figuras e tabelas após serem citadas no texto. Tabelas devem ter legenda acima e figuras devem ter legenda abaixo, seguindo a prática comum de publicações acadêmicas~\cite{ieeeconference}.
+Figuras e tabelas devem ser inseridas próximas ao trecho em que são citadas. Em geral, tabelas usam legenda acima, enquanto figuras usam legenda abaixo. Também é recomendável usar \verb|\label| depois de \verb|\caption| para permitir referências automáticas.
+
+\begin{table}[htbp]
+\caption{Exemplo de tabela no modelo UniSATeX}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Elemento} & \textbf{Função} \\
+\hline
+\texttt{main.tex} & Organiza os arquivos do TCC \\
+\hline
+\texttt{references.bib} & Armazena referências BibTeX \\
+\hline
+\end{tabular}
+\label{tab:exemplo-latex}
+\end{center}
+\end{table}
+
+A Tabela~\ref{tab:exemplo-latex} mostra um exemplo de organização de informações em duas colunas.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics{assets/fig1.png}}
+\caption{Exemplo de imagem inserida no modelo UniSATeX.}
+\label{fig:exemplo-imagem}
+\end{figure}
+
+A Figura~\ref{fig:exemplo-imagem} demonstra como inserir uma imagem armazenada na pasta \texttt{assets}. O caminho deve ser relativo ao arquivo principal do projeto.
+
+\subsection{Boas Práticas de Escrita e Formatação}
+Antes de ajustar detalhes visuais, recomenda-se escrever e revisar o conteúdo textual. O modelo já define margens, colunas, fontes, espaçamentos e estilo de referências; portanto, alterações manuais nesses itens devem ser evitadas. Também é importante remover textos explicativos do template antes da entrega final do TCC.
