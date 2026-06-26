@@ -1,0 +1,64 @@
+% !TEX root = main.tex
+
+% Font options: use `times` or `arial` with the class.
+\documentclass[conference,times]{unisatex}
+\unisatexoverridecommandlockouts
+
+\usepackage{tikz-cd}
+\usepackage{multicol}
+
+\title{Título do Artigo\unisatexsubtitle{Modelo institucional para artigos}}
+
+\author{
+    \unisatexauthorblockN{1\textsuperscript{st} Given Name Surname}
+    \unisatexauthorblockA{
+        \textit{Department of Computer Engineering} \\
+        \textit{UniSATC} \\
+        Criciúma, Brasil \\
+        email address or ORCID
+    }
+
+    \and
+
+    \unisatexauthorblockN{2\textsuperscript{nd} Given Name Surname}
+    \unisatexauthorblockA{
+        \textit{Department of Computer Engineering} \\
+        \textit{UniSATC} \\
+        Criciúma, Brasil \\
+        email address or ORCID
+    }
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Este documento apresenta uma base inicial para artigos acadêmicos da UniSATC em formato inspirado no modelo de conferências do IEEE~\cite{ieeetran}. A classe local preserva o arquivo \texttt{IEEEtran.cls} como dependência e concentra as personalizações institucionais em \texttt{unisatex.cls}.
+\end{abstract}
+
+\begin{keywords}
+UniSATC, modelo LaTeX, conferência, artigo acadêmico, IEEEtran.
+\end{keywords}
+
+\section{Introdução}
+Este arquivo demonstra o uso do modelo \texttt{unisatex.cls}. A estrutura segue a organização típica de artigos de conferência: título, autores, resumo, palavras-chave, seções numeradas, figuras, tabelas, equações e referências.
+
+\section{Preparação do Artigo}
+Escreva o conteúdo principal antes de ajustar detalhes de formatação. O objetivo da classe é manter a consistência visual e evitar mudanças manuais nas margens, nas colunas e nos espaçamentos.
+
+\subsection{Equações}
+As equações podem ser numeradas normalmente:
+\begin{equation}
+E = mc^2.
+\end{equation}
+
+\subsection{Figuras e Tabelas}
+Insira figuras e tabelas após serem citadas no texto. Tabelas devem ter legenda acima e figuras devem ter legenda abaixo, seguindo a prática comum do IEEE~\cite{ieeeconference}.
+
+\section{Conclusão}
+O modelo pode ser expandido com regras específicas da UniSATC, como logotipo, identificação de evento, rodapé institucional, normas de submissão e exemplos bibliográficos.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
